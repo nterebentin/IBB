@@ -101,8 +101,44 @@ namespace ConsoleApp4
                 }
 
             }
+            public object this[Fields fields]
+            {
+                get
+                {
+                    return internalData[(int)fields];
+                }
 
-            
+                set
+                {
+                    internalData[(int)fields] = value;
+                }
+            }
+            public object this[String fields]
+            {
+                get
+                {
+                    int i = -1;
+                    switch (fields)
+                    {
+                        case "Ad":
+                                i = 0;
+                            break;
+                        case "Soyad":
+                                i = 1;
+                            break;
+                            default:
+                            break;
+                    }
+                    return internalData[i];
+                }
+
+            //    set
+            //    {
+            //        internalData[(int)fields] = value;
+            //    }
+            //}
+
+
 
         }
     }
